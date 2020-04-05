@@ -16,12 +16,13 @@ class TransactionList extends StatelessWidget {
         itemBuilder: (ctx, index) {
           final tr = transactions[index];
           return Card(
+            elevation: 0,
             child: Row(
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.purple, width: 2),
+                    border: Border.all(color: Colors.white, width: 2),
                   ),
                   padding: EdgeInsets.all(10),
                   child: Text(
