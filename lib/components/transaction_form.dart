@@ -70,7 +70,12 @@ class _TransactionFormState extends State<TransactionForm> {
             children: <Widget>[
               FlatButton(
                 textColor: Theme.of(context).accentColor,
-                child: Text('SALVAR'),
+                child: Text(
+                  'SALVAR',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 onPressed: _submitForm,
               ),
             ],

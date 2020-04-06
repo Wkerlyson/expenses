@@ -15,6 +15,16 @@ class ExpensesApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color.fromRGBO(21, 12, 70, 1),
         accentColor: Colors.orange[800],
+        fontFamily: 'Quicksand',
+        appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+        ),
       ),
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
@@ -80,7 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).primaryColor,
         title: Text(
           'Despesas pessoais',
-          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+          style: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 17,
+          ),
         ),
         actions: <Widget>[
           IconButton(
