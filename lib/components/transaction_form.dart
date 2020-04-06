@@ -27,56 +27,55 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.grey.shade100,
-              ),
-              child: TextField(
-                controller: titleController,
-                onSubmitted: (_) => _submitForm(),
-                decoration: InputDecoration(
-                  hintText: 'Título',
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(10),
-                ),
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.grey.shade100,
+            ),
+            child: TextField(
+              controller: titleController,
+              onSubmitted: (_) => _submitForm(),
+              cursorColor: Theme.of(context).primaryColor,
+              decoration: InputDecoration(
+                hintText: 'Título',
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.all(10),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: Colors.grey.shade100,
-              ),
-              child: TextField(
-                controller: valueController,
-                onSubmitted: (_) => _submitForm(),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                decoration: InputDecoration(
-                  hintText: 'Valor (R\$)',
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(10),
-                ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: Colors.grey.shade100,
+            ),
+            child: TextField(
+              controller: valueController,
+              onSubmitted: (_) => _submitForm(),
+              cursorColor: Theme.of(context).primaryColor,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(
+                hintText: 'Valor (R\$)',
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.all(10),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                FlatButton(
-                  textColor: Colors.purple,
-                  child: Text('Nova transação'),
-                  onPressed: _submitForm,
-                ),
-              ],
-            )
-          ],
-        ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              FlatButton(
+                textColor: Theme.of(context).accentColor,
+                child: Text('SALVAR'),
+                onPressed: _submitForm,
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

@@ -12,6 +12,10 @@ class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Color.fromRGBO(21, 12, 70, 1),
+        accentColor: Colors.orange[800],
+      ),
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -36,6 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
       title: 'Conta de Luz',
       value: 211.30,
       date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't3',
+      title: 'Conta de internet',
+      value: 211.30,
+      date: DateTime.now(),
     )
   ];
 
@@ -50,6 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context) {
@@ -65,11 +77,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: Text('Despesas Pessoais'),
+        backgroundColor: Theme.of(context).primaryColor,
+        title: Text(
+          'Despesas pessoais',
+          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
+        ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.add),
+            icon: Icon(
+              Icons.add,
+              color: Theme.of(context).accentColor,
+            ),
             onPressed: () => _openTransactionFormModal(context),
           )
         ],
@@ -92,10 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openTransactionFormModal(context),
-        backgroundColor: Colors.purple,
-        child: Icon(Icons.add),
+        backgroundColor: Theme.of(context).accentColor,
+        child: Icon(Icons.add, color: Colors.white),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
