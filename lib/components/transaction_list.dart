@@ -13,8 +13,8 @@ class TransactionList extends StatelessWidget {
       height: 500,
       child: transactions.isEmpty
           ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 50),
                 Container(
                   height: 64,
                   child: Image.asset(
