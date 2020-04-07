@@ -62,7 +62,7 @@ class TransactionList extends StatelessWidget {
                     ),
                     trailing: IconButton(
                       tooltip: 'Remover',
-                      icon: Icon(Icons.delete_outline),
+                      icon: Icon(Icons.remove_circle_outline),
                       color: Theme.of(context).accentColor,
                       onPressed: () => onRemove(tr.id),
                     ),
