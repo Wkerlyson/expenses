@@ -1,6 +1,6 @@
 # Expenses
 
-Simple application to control pantries
+Simple application to control expenses
 
 App the course: [Flutter e Dart - Aprenda e Construa APPs iOS e Android 2020](https://www.udemy.com/course/curso-flutter/)
 
